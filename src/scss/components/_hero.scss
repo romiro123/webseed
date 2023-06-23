@@ -1,0 +1,36 @@
+.hero {
+  background-color: var(--dark);
+  border-radius: 0 0 75px 75px;
+  margin-bottom: 120px;
+
+  &__container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  &__content {
+    max-width: 800px;
+  }
+
+  &__title {
+    color: var(--light);
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    color: var(--light);
+    margin-bottom: 35px;
+  }
+
+  &__wrapp-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 500px;
+  }
+
+  &__link {}
+}

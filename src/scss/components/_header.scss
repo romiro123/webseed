@@ -1,0 +1,19 @@
+.header {
+  background-color: var(--dark);
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+  }
+
+  &__link {}
+
+  &__bottom {
+    padding: 15px 25px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+  }
+
+}

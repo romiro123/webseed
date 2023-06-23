@@ -1,0 +1,15 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__item {}
+
+  &__link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--light);
+  }
+}
