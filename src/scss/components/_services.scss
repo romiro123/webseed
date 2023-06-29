@@ -55,4 +55,8 @@
       grid-area: h;
     }
   }
+
+  &__text:not(:last-child) {
+    margin-bottom: 15px;
+  }
 }

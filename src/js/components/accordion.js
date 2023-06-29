@@ -1,3 +1,7 @@
 import Accordion from 'accordion-js';
 
-new Accordion('.accordion-container');
+new Accordion('.accordion--features', {
+  openOnInit: [0]
+})
+
+

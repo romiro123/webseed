@@ -29,6 +29,10 @@
     margin-top: auto;
   }
 
+  &__text-link {
+    color: inherit;
+  }
+
   &__img {
     grid-column: 6/span 7;
   }
