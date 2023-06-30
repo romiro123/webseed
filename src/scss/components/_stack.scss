@@ -1,0 +1,14 @@
+.stack {
+  margin-bottom: 120px;
+
+  &__title {
+    margin-bottom: 36px;
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grabbing;
+  }
+}

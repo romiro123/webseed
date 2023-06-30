@@ -61,18 +61,18 @@ const svgSprites = () => {
   return src(paths.srcSvg)
     .pipe(
       svgmin({
-        js2svg: {
-          pretty: true,
-        },
+        // js2svg: {
+        //   pretty: true,
+        // },
       })
     )
     .pipe(
       cheerio({
-        run: function ($) {
-          $('[fill]').removeAttr('fill');
-          $('[stroke]').removeAttr('stroke');
-          $('[style]').removeAttr('style');
-        },
+        // run: function ($) {
+        //   $('[fill]').removeAttr('fill');
+        //   $('[stroke]').removeAttr('stroke');
+        //   $('[style]').removeAttr('style');
+        // },
         parserOptions: {
           xmlMode: true
         },
@@ -267,8 +267,8 @@ const watchFiles = () => {
 
 const cache = () => {
   return src(`${buildFolder}/**/*.{css,js,svg,png,jpg,jpeg,webp,woff2}`, {
-      base: buildFolder
-    })
+    base: buildFolder
+  })
     .pipe(rev())
     .pipe(revDel())
     .pipe(dest(buildFolder))
