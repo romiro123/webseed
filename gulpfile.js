@@ -34,6 +34,7 @@ const path = require('path');
 const zip = require('gulp-zip');
 const rootFolder = path.basename(path.resolve());
 const deploy = require('gulp-gh-pages');
+const gulp = require('gulp');
 
 // paths
 const srcFolder = './src';
