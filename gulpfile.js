@@ -33,6 +33,7 @@ const plumber = require('gulp-plumber');
 const path = require('path');
 const zip = require('gulp-zip');
 const rootFolder = path.basename(path.resolve());
+const deploy = require('gulp-gh-pages');
 
 // paths
 const srcFolder = './src';
@@ -316,11 +317,19 @@ const toProd = (done) => {
   done();
 };
 
+const deployToGHP = () => {
+  return gulp.src("./app/**/*")
+    .pipe(deploy({
+      remoteUrl: "https://github.com/romiro123/webseed.git",
+      branch: "prod"
+    }))
+}
+
 exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, watchFiles);
 
 exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, svgSprites)
 
-exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, htmlMinify);
+exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, htmlMinify, deployToGHP);
 
 exports.cache = series(cache, rewrite);
 
