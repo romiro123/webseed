@@ -380,16 +380,18 @@ template {
   border: 0;
 }
 
-/* .ac .ac-trigger::after {
+.ac .ac-trigger::after {
   content: "+";
   text-align: center;
   width: 15px;
   -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
   position: absolute;
   right: 10px;
-  top: 50%
-} */
+  top: 50%;
+}
+
 .ac .ac-trigger:focus {
   color: #8a8a8a;
 }
@@ -402,12 +404,13 @@ template {
   transition-timing-function: ease;
 }
 
-/* .ac .ac-panel .ac-text {
+.ac .ac-panel .ac-text {
   font: 15px/24px Arial, sans-serif;
   color: #111;
   padding: 8px;
-  margin: 0
-} */
+  margin: 0;
+}
+
 .ac.js-enabled .ac-panel {
   visibility: hidden;
 }
@@ -416,9 +419,10 @@ template {
   visibility: visible;
 }
 
-/* .ac.is-active>.ac-header .ac-trigger::after {
-  content: "–"
-} */
+.ac.is-active > .ac-header .ac-trigger::after {
+  content: "–";
+}
+
 /**
  * Swiper 7.4.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions

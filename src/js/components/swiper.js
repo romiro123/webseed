@@ -1,5 +1,5 @@
-import Swiper, { Navigation, Pagination, Autoplay, Loop, Speed, freeMode } from 'swiper';
-Swiper.use([Navigation, Pagination, Autoplay, Loop, Speed, freeMode]);
+import Swiper, { Navigation, Pagination, Autoplay, FreeMode } from 'swiper';
+Swiper.use([Navigation, Pagination, Autoplay, FreeMode]);
 
 
 const swiperStack = new Swiper('.swiper--stack', {

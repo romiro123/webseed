@@ -211,7 +211,7 @@ const scroll = new (smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default())('a[hre
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_0__.Loop, swiper__WEBPACK_IMPORTED_MODULE_0__.Speed, swiper__WEBPACK_IMPORTED_MODULE_0__.freeMode]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_0__.FreeMode]);
 const swiperStack = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper--stack', {
   slidesPerView: 5,
   spaceBetween: 30,
