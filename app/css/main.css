@@ -417,10 +417,7 @@ p {
 .services__title {
   margin-bottom: 36px;
 }
-.services-card__title {
-  margin-bottom: 20px;
-}
-.services-card__list {
+.services__list {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr;
@@ -429,7 +426,7 @@ p {
   -ms-grid-rows: auto 30px auto 30px auto 30px auto 30px auto;
   grid-template-areas: "a a a b b b" "c c c b b b" "d d d d d d" "e e f f g g" "h h h h h h";
 }
-.services-card__item {
+.services__item {
   background-color: var(--light);
   border-radius: 15px;
   padding: 25px;
@@ -440,59 +437,67 @@ p {
   transition: transform 0.2s ease;
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
-.services-card__item:nth-child(1) {
+.services__item:nth-child(1) {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 5;
   grid-area: a;
 }
-.services-card__item:nth-child(2) {
+.services__item:nth-child(2) {
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
   -ms-grid-column: 7;
   -ms-grid-column-span: 5;
   grid-area: b;
 }
-.services-card__item:nth-child(3) {
+.services__item:nth-child(3) {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 5;
   grid-area: c;
 }
-.services-card__item:nth-child(4) {
+.services__item:nth-child(4) {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 11;
   grid-area: d;
 }
-.services-card__item:nth-child(5) {
+.services__item:nth-child(5) {
   -ms-grid-row: 7;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: e;
 }
-.services-card__item:nth-child(6) {
+.services__item:nth-child(6) {
   -ms-grid-row: 7;
   -ms-grid-column: 5;
   -ms-grid-column-span: 3;
   grid-area: f;
 }
-.services-card__item:nth-child(7) {
+.services__item:nth-child(7) {
   -ms-grid-row: 7;
   -ms-grid-column: 9;
   -ms-grid-column-span: 3;
   grid-area: g;
 }
-.services-card__item:nth-child(8) {
+.services__item:nth-child(8) {
   -ms-grid-row: 9;
   -ms-grid-column: 1;
   -ms-grid-column-span: 11;
   grid-area: h;
 }
-.services-card__item:hover {
+.services__item:hover {
   -webkit-transform: translateY(-10px);
   -ms-transform: translateY(-10px);
   transform: translateY(-10px);
+}
+.services-card__title {
+  margin-bottom: 20px;
+}
+.services-card__subtitle {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0 0 20px 0;
 }
 .services-card__text:not(:last-child) {
   margin-bottom: 15px;

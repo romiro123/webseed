@@ -182,6 +182,7 @@ __webpack_require__.r(__webpack_exports__);
 
 new (accordion_js__WEBPACK_IMPORTED_MODULE_0___default())('.accordion--features', {
   openOnInit: [0]
+  // triggerClass: 'ac--tiger'
 });
 
 /***/ }),
