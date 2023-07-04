@@ -1,0 +1,43 @@
+.feedback {
+  background-image: linear-gradient(#202124, #202124);
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  background-position: bottom;
+
+  &__container {
+    // padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  &__wrapp {
+    display: flex;
+    background-color: var(--light);
+    border-radius: 25px 50px 25px 25px;
+  }
+
+  &__content {
+    width: 60%;
+    padding: 40px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    display: inline-block;
+  }
+
+  &__img-wrapp {
+    width: 40%;
+  }
+
+  &__image {
+    height: 100%;
+    border-radius: 0 50px;
+  }
+}

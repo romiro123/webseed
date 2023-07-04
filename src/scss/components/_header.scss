@@ -17,3 +17,15 @@
   }
 
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  & svg {
+    display: inline-block;
+    width: 200px;
+    height: auto;
+  }
+
+}

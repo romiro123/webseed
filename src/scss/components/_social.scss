@@ -1,0 +1,42 @@
+.social {
+  background-color: var(--dark);
+  margin-bottom: 120px;
+
+  &__container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 50px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  &__left {
+    grid-column: 1/span 6;
+  }
+
+  &__title {
+    color: var(--light);
+    margin-bottom: 36px;
+  }
+
+  &__text {
+    color: var(--light);
+    margin-bottom: 20px;
+  }
+
+  &__wrapp-btns {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__right {
+    grid-column: 7/span 6;
+  }
+
+  &__image {
+    border-radius: 25px;
+    height: 100%;
+  }
+}

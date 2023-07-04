@@ -1,0 +1,110 @@
+.reviews {
+  margin-bottom: 120px;
+
+  &__title {}
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    cursor: grabbing;
+    background-color: var(--light);
+    border-radius: 25px;
+  }
+
+  &-card {
+    padding: 25px;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    &__user {
+      display: flex;
+      align-items: center;
+    }
+
+    &__user-avater {
+      display: flex;
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 30px;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--main);
+    }
+
+    &__user-name {
+      margin-left: 15px;
+    }
+
+    &__img {
+      height: 60px;
+      width: 100%;
+    }
+
+    &__text {}
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+  }
+
+  &__nav-btn {
+    display: inline-flex;
+    position: static;
+
+    &--prev {
+      transform: scale(-1, 1)
+    }
+
+    & svg {
+      flex-shrink: 0;
+      width: 35px;
+      height: 35px;
+      border: 2px solid var(--dark);
+      border-radius: 100%;
+      fill: none;
+      background-color: transparent;
+      stroke: var(--dark);
+      stroke-linecap: round;
+      stroke-width: 2px;
+      transition: stroke .2s ease-in-out,
+        border .2s ease-in-out,
+        background-color .2s ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        background-color: var(--dark);
+        stroke: var(--light);
+      }
+    }
+
+    &:focus {
+      outline: none;
+
+      svg {
+        stroke: var(--dark);
+        background-color: var(--accent);
+      }
+    }
+
+  }
+
+
+}

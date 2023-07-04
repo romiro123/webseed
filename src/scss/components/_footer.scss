@@ -1,0 +1,15 @@
+.footer {
+  background-color: var(--dark);
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 100px;
+    color: var(--light);
+  }
+
+  &__top {
+    grid-column: 1/span 5;
+  }
+}

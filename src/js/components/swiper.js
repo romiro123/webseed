@@ -14,3 +14,18 @@ const swiperStack = new Swiper('.swiper--stack', {
   loop: true,
   freeMode: true,
 });
+
+const swiperReviews = new Swiper('.swiper--reviews', {
+  navigation: {
+    nextEl: ".reviews__nav-btn--next",
+    prevEl: ".reviews__nav-btn--prev",
+  },
+  slidesPerView: 2,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+
+});
