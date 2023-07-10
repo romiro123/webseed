@@ -19,11 +19,11 @@
 }
 
 .logo {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
 
   & svg {
-    display: inline-block;
+    display: block;
     width: 200px;
     height: auto;
   }
