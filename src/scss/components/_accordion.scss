@@ -1,48 +1,52 @@
 .accordion {
-  &--features {
-    .ac {
-      border: none;
-      border-bottom: 1px solid #eee;
+  .ac {
+    border: none;
+    border-bottom: 1px solid #eee;
+    background-color: transparent;
+
+    &__header {
+      margin: 0;
+      padding: 0;
+    }
+
+    &__title {
+      color: var(--grey);
+      transition: color .4s ease-in-out;
+    }
+
+    &__trigger {
+      position: relative;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      cursor: pointer;
       background-color: transparent;
+      // transition: color 0.25s ease;
+      border: none;
+      padding: 20px 10px;
 
-      &-text {
-        font-family: var(--font-family);
-        font-size: 16px;
-        color: var(--dark);
-        padding: 0 0 15px 0;
-      }
-
-      &-title {
-        color: var(--grey);
-        transition: color .4s ease-in-out;
-      }
-
-      &-trigger {
-        display: inline-flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 0;
-
-        & svg {
-          flex-shrink: 0;
-          width: 25px;
-          height: 25px;
-          border: 2px solid var(--grey);
-          border-radius: 100%;
-          fill: none;
-          stroke: var(--grey);
-          stroke-linecap: round;
-          stroke-width: 2px;
-          rotate: 90deg;
-          transition:
-            rotate .4s ease-in-out,
-            border .4s ease-in-out,
-            stroke .4s ease-in-out, ;
-        }
+      & svg {
+        flex-shrink: 0;
+        width: 25px;
+        height: 25px;
+        background-color: transparent;
+        border: 2px solid var(--grey);
+        border-radius: 100%;
+        fill: none;
+        stroke: var(--grey);
+        stroke-linecap: round;
+        stroke-width: 2px;
+        rotate: 90deg;
+        transition:
+          background-color .4s ease-in-out,
+          rotate .4s ease-in-out,
+          border .4s ease-in-out,
+          stroke .4s ease-in-out, ;
       }
 
       &:hover {
-        .ac-title {
+        .ac__title {
           color: var(--dark);
         }
 
@@ -51,21 +55,49 @@
           stroke: var(--dark);
         }
       }
-    }
 
-    .is-active .ac {
-      &-trigger {
+      &:focus {
+        outline: none;
+      }
+
+      &:focus-visible {
         & svg {
-          rotate: -90deg;
           border: 2px solid var(--dark);
           stroke: var(--dark);
+          background-color: var(--accent)
         }
       }
+    }
 
-      &-title {
-        color: var(--dark);
+    &__panel {
+      overflow: hidden;
+      transition-property: height, visibility;
+      transition-timing-function: ease;
+    }
+
+    &__text {
+      font-family: var(--font-family);
+      font-size: 16px;
+      color: var(--dark);
+      padding: 0 35px 15px 10px;
+    }
+  }
+
+  .is-active .ac {
+    &__trigger {
+      & svg {
+        rotate: -90deg;
+        border: 2px solid var(--dark);
+        stroke: var(--dark);
       }
+    }
 
+    &__title {
+      color: var(--dark);
+    }
+
+    &__panel {
+      visibility: visible;
     }
   }
 }

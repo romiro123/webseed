@@ -8,8 +8,18 @@
   &__item {}
 
   &__link {
-    font-size: 14px;
+    // font-size: 14px;
     font-weight: 600;
     color: var(--light);
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      color: var(--accent);
+    }
+
+    &:focus {
+      outline: none;
+      color: var(--accent);
+    }
   }
 }

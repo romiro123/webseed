@@ -4,7 +4,6 @@
 
   &__container {
     display: grid;
-    align-items: center;
     grid-template-columns: repeat(12, 1fr);
     gap: 50px;
     padding-top: 80px;
@@ -13,6 +12,7 @@
 
   &__left {
     grid-column: 1/span 6;
+    margin: auto 0;
   }
 
   &__title {
