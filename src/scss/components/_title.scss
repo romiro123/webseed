@@ -9,11 +9,21 @@
   &--page {
     font-size: 48px;
     line-height: 60px;
+
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
   }
 
   &--section {
     font-size: 36px;
     line-height: 44px;
+
+    @include tablet {
+      font-size: 28px;
+      line-height: 36px;
+    }
   }
 
   &--big {

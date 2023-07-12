@@ -1,7 +1,15 @@
 .features {
   margin-bottom: 120px;
 
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
   &__title {
     margin-bottom: 36px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
   }
 }

@@ -22,4 +22,12 @@
       color: var(--accent);
     }
   }
+
+  &__phone {
+    display: none;
+
+    @include small-tablet {
+      display: block;
+    }
+  }
 }

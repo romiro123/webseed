@@ -1,8 +1,16 @@
 .services {
   margin-bottom: 120px;
 
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
   &__title {
     margin-bottom: 36px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
   }
 
   &__list {
@@ -13,8 +21,8 @@
       'a a a b b b'
       'c c c b b b'
       'd d d d d d'
-      'e e f f g g'
-      'h h h h h h';
+      'e e e f f f'
+    ;
   }
 
   &__item {
@@ -48,14 +56,6 @@
       grid-area: f;
     }
 
-    &:nth-child(7) {
-      grid-area: g;
-    }
-
-    &:nth-child(8) {
-      grid-area: h;
-    }
-
     &:hover {
       transform: translateY(-10px);
     }
@@ -64,12 +64,20 @@
   &-card {
     &__title {
       margin-bottom: 20px;
+
+      @include tablet {
+        margin-bottom: 15px;
+      }
     }
 
     &__subtitle {
       font-size: inherit;
       font-weight: inherit;
       margin: 0 0 20px 0;
+
+      @include tablet {
+        margin: 0 0 15px 0;
+      }
     }
 
     &__text:not(:last-child) {

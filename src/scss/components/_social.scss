@@ -2,22 +2,40 @@
   background-color: var(--dark);
   margin-bottom: 120px;
 
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 50px;
     padding-top: 80px;
     padding-bottom: 80px;
+
+    @include tablet {
+      gap: 30px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
   }
 
   &__left {
     grid-column: 1/span 6;
     margin: auto 0;
+
+    @include tablet {
+      grid-column: 1/span 7;
+    }
   }
 
   &__title {
     color: var(--light);
     margin-bottom: 36px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
   }
 
   &__text {
@@ -28,11 +46,17 @@
   &__wrapp-btns {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 15px;
+
   }
 
   &__right {
     grid-column: 7/span 6;
+
+    @include tablet {
+      grid-column: 8/span 5;
+    }
   }
 
   &__image {

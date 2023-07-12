@@ -1,5 +1,6 @@
 <header class="header">
   <div class="header__container container ">
+
     <div class="header__top">
       <a href="#" class="header__logo logo" tabindex="-1">
         <svg width="467" height="100" viewBox="0 0 467 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,10 +13,18 @@
           <circle cx="50" cy="50" r="47.5" stroke="#CFE741" stroke-width="5" />
         </svg>
       </a>
-      <a href="tel:+" class="header__link link link--green link--small">Оставить заявку</a>
+      <a href="tel:+" class="header__link link link--green link--small">+7 (999) 111 00-00</a>
+      <button class="burger btn-reset" aria-label="Открыть меню" aria-expanded="false" data-burger>
+        <span class="burger__icon">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </span>
+      </button>
     </div>
 
-    <nav class="nav header__bottom" title="">
+
+    <nav class="header__bottom nav menu" data-menu title="">
       <ul class="nav__list  list-reset">
         <li class="nav__item"><a href="#about" class="nav__link scroll-link">О нас</a></li>
         <li class="nav__item"><a href="#services" class="nav__link scroll-link">Услуги</a></li>
@@ -24,8 +33,11 @@
         <li class="nav__item"><a href="#" class="nav__link scroll-link">Портфолио</a></li>
         <li class="nav__item"><a href="#reviews" class="nav__link scroll-link">Отзывы</a></li>
       </ul>
+      <a href="tel:+" class="nav__phone link link--green link--small">+7 (999) 111 00-00</a>
     </nav>
 
+
   </div>
+
 
 </header>

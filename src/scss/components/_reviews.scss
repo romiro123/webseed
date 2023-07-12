@@ -1,6 +1,21 @@
 .reviews {
   margin-bottom: 120px;
 
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
   &__title {}
 
   &__slide {
@@ -20,6 +35,10 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 25px;
+
+      @include tablet {
+        margin-bottom: 15px;
+      }
     }
 
     &__user {
@@ -50,12 +69,7 @@
     &__text {}
   }
 
-  &__top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 36px;
-  }
+
 
   &__nav {
     display: flex;
