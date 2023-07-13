@@ -25,6 +25,12 @@
     font-size: 18px;
     line-height: 28px;
     padding: 14px 24px;
+
+    @include mobile {
+      font-size: 16px;
+      line-height: inherit;
+      padding: 14px 24px;
+    }
   }
 
   &--small {

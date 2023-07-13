@@ -3,7 +3,7 @@ Swiper.use([Navigation, Pagination, Autoplay, FreeMode]);
 
 
 const swiperStack = new Swiper('.swiper--stack', {
-  slidesPerView: 5,
+  slidesPerView: 2,
   spaceBetween: 30,
   speed: 3000,
   autoplay: {
@@ -13,6 +13,24 @@ const swiperStack = new Swiper('.swiper--stack', {
   },
   loop: true,
   freeMode: true,
+  breakpoints: {
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 30,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+    576: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+  }
 });
 
 const swiperReviews = new Swiper('.swiper--reviews', {
@@ -20,12 +38,23 @@ const swiperReviews = new Swiper('.swiper--reviews', {
     nextEl: ".reviews__nav-btn--next",
     prevEl: ".reviews__nav-btn--prev",
   },
-  slidesPerView: 2,
+  slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
   },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 30,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+
+  }
 
 });

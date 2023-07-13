@@ -18,6 +18,10 @@
       padding-top: 60px;
       padding-bottom: 60px;
     }
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__left {
@@ -26,6 +30,10 @@
 
     @include tablet {
       grid-column: 1/span 7;
+    }
+
+    @include small-tablet {
+      grid-column: auto
     }
   }
 
@@ -56,6 +64,10 @@
 
     @include tablet {
       grid-column: 8/span 5;
+    }
+
+    @include small-tablet {
+      grid-column: auto
     }
   }
 

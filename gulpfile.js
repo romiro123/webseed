@@ -254,7 +254,7 @@ const watchFiles = () => {
   browserSync.init({
     server: {
       baseDir: `${buildFolder}`
-    },
+    }
   });
 
   watch(paths.srcScss, styles);

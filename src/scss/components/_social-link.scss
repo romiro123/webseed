@@ -19,7 +19,7 @@
   }
 
   &__link {
-    display: inline-block;
+    display: block;
     border-radius: 100%;
     outline-offset: 0px;
     outline: 0px solid transparent;
@@ -31,11 +31,17 @@
       outline: 2px solid var(--accent);
     }
 
-
     & svg {
       display: block;
       width: 35px;
       height: 35px;
+
+      @include small-tablet {
+        width: 45px;
+        height: 45px;
+      }
     }
+
+
   }
 }

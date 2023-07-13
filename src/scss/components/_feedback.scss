@@ -17,11 +17,23 @@
     display: flex;
     background-color: var(--light);
     border-radius: 25px 50px 25px 25px;
+
+    @include small-tablet {
+      flex-direction: column;
+    }
   }
 
   &__content {
     width: 60%;
     padding: 40px;
+
+    @include small-tablet {
+      width: 100%;
+    }
+
+    @include tablet {
+      padding: 25px;
+    }
   }
 
   &__title {
@@ -38,10 +50,19 @@
 
   &__img-wrapp {
     width: 40%;
+
+    @include small-tablet {
+      width: 100%;
+      padding: 0 25px 25px;
+    }
   }
 
   &__image {
     height: 100%;
     border-radius: 0 50px;
+
+    @include small-tablet {
+      border-radius: 25px;
+    }
   }
 }

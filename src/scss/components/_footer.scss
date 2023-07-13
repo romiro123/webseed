@@ -8,11 +8,19 @@
     grid-template-columns: 1fr 1fr auto;
     gap: 30px;
     color: var(--light);
+
+    @include small-tablet {
+      grid-template-columns: 1fr auto;
+    }
   }
 
   &__top {
     grid-column: 1/ span 3;
     display: inline-flex;
+
+    @include small-tablet {
+      grid-column: 1/ span 2;
+    }
   }
 
   &__contacts {
@@ -52,6 +60,10 @@
 
     &-item:not(:last-child) {
       margin-bottom: 10px;
+    }
+
+    @include small-tablet {
+      display: none;
     }
   }
 }

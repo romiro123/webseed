@@ -23,6 +23,18 @@
       'd d d d d d'
       'e e e f f f'
     ;
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'a'
+        'b'
+        'c'
+        'd'
+        'e'
+        'f'
+      ;
+    }
   }
 
   &__item {

@@ -10,6 +10,10 @@
     --container-offset: 30px;
   }
 
+  @include mobile {
+    --container-offset: 15px;
+  }
+
   // colors
   --light: #fff;
   --dark: #202124;
