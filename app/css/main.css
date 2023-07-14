@@ -494,7 +494,7 @@ p {
 }
 @media (max-width: 576px) {
   .header__top {
-    padding: 10px 0;
+    padding: 15px 0;
   }
 }
 @media (max-width: 768px) {
@@ -638,8 +638,8 @@ p {
 }
 @media (max-width: 576px) {
   .hero__container {
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
 .hero__content {
@@ -678,7 +678,7 @@ p {
   .hero__subtitle {
     font-size: 18px;
     line-height: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 }
 .hero__subtitle--mobile {
