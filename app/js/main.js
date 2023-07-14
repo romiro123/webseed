@@ -30,12 +30,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_accordion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/accordion */ "./src/js/components/accordion.js");
 /* harmony import */ var _components_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/swiper */ "./src/js/components/swiper.js");
-/* harmony import */ var _components_scroll_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/scroll-link */ "./src/js/components/scroll-link.js");
-/* harmony import */ var _components_scroll_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_scroll_link__WEBPACK_IMPORTED_MODULE_2__);
+
+
 // import './components/smooth-scroll';
-
-
-
 
 /***/ }),
 
@@ -193,27 +190,6 @@ new (accordion_js__WEBPACK_IMPORTED_MODULE_0___default())('.accordion--features'
 
 /***/ }),
 
-/***/ "./src/js/components/scroll-link.js":
-/*!******************************************!*\
-  !*** ./src/js/components/scroll-link.js ***!
-  \******************************************/
-/***/ (() => {
-
-document.querySelectorAll('.scroll-link').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    const href = this.getAttribute('href').substring(1);
-    const scrollTarget = document.getElementById(href);
-    const elementPosition = scrollTarget.getBoundingClientRect().top;
-    window.scrollBy({
-      top: elementPosition,
-      behavior: 'smooth'
-    });
-  });
-});
-
-/***/ }),
-
 /***/ "./src/js/components/swiper.js":
 /*!*************************************!*\
   !*** ./src/js/components/swiper.js ***!
@@ -263,10 +239,10 @@ const swiperReviews = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swipe
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false
-  },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
   breakpoints: {
     320: {
       slidesPerView: 1,

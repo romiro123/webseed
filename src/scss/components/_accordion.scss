@@ -23,9 +23,12 @@
       width: 100%;
       cursor: pointer;
       background-color: transparent;
-      // transition: color 0.25s ease;
       border: none;
       padding: 20px 10px;
+
+      @include mobile {
+        padding: 20px 0px;
+      }
 
       & svg {
         flex-shrink: 0;
@@ -77,10 +80,11 @@
     }
 
     &__text {
-      font-family: var(--font-family);
-      font-size: 16px;
-      color: var(--dark);
       padding: 0 35px 15px 10px;
+
+      @include mobile {
+        padding: 0 0 15px 0;
+      }
     }
   }
 

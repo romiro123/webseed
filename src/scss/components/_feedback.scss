@@ -5,7 +5,6 @@
   background-position: bottom;
 
   &__container {
-    // padding-top: 80px;
     padding-bottom: 80px;
 
     @include tablet {
@@ -46,6 +45,11 @@
 
   &__link {
     display: inline-block;
+
+    @include mobile {
+      display: block;
+      text-align: center;
+    }
   }
 
   &__img-wrapp {

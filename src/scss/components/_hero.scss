@@ -68,14 +68,14 @@
     }
 
     &--mobile {
-      display: none;
+      @include mobile {
+        display: none;
+      }
     }
   }
 
   &__wrapp-btns {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-all-sb;
     max-width: 500px;
 
     @include mobile {

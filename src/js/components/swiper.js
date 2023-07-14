@@ -41,10 +41,10 @@ const swiperReviews = new Swiper('.swiper--reviews', {
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
   breakpoints: {
     320: {
       slidesPerView: 1,

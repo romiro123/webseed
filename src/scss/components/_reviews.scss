@@ -5,10 +5,12 @@
     margin-bottom: 80px;
   }
 
+  @include mobile {
+    margin-bottom: 45px;
+  }
+
   &__top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-all-sb;
     margin-bottom: 36px;
 
     @include tablet {
@@ -31,9 +33,7 @@
     padding: 25px;
 
     &__header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex-all-sb;
       margin-bottom: 25px;
 
       @include tablet {
@@ -42,18 +42,16 @@
     }
 
     &__user {
-      display: flex;
-      align-items: center;
+      @include flex-v-center;
     }
 
     &__user-avater {
-      display: flex;
+      @include flex-all-center;
+
       flex-shrink: 0;
       width: 44px;
       height: 44px;
       border-radius: 30px;
-      justify-content: center;
-      align-items: center;
       background-color: var(--main);
     }
 
@@ -72,9 +70,7 @@
 
 
   &__nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-all-sb;
     width: 80px;
   }
 
