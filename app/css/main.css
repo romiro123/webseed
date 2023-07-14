@@ -511,6 +511,47 @@ p {
   }
 }
 
+.form--modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.form__label:not(:last-child) {
+  margin-bottom: 25px;
+}
+.form__input {
+  outline: 1px solid red;
+  width: 100%;
+  font-size: inherit;
+  padding: 14px 24px;
+}
+.form__btn {
+  display: inline-block;
+  margin-right: auto;
+}
+
+.graph-modal__container {
+  width: 500px;
+  padding: 30px;
+  background-color: var(--light);
+  border-radius: 25px;
+}
+.graph-modal__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.graph-modal__title {
+  margin-bottom: 20px;
+}
+.graph-modal__text {
+  margin-bottom: 20px;
+}
+
 .header {
   background-color: var(--dark);
 }

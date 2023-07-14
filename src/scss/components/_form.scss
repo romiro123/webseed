@@ -1,0 +1,46 @@
+.form {
+  &--modal {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  &__input {
+    outline: 1px solid red;
+    width: 100%;
+    font-size: inherit;
+    padding: 14px 24px;
+  }
+
+  &__btn {
+    display: inline-block;
+    margin-right: auto;
+  }
+}
+
+.graph-modal {
+  &__container {
+    width: 500px;
+    padding: 30px;
+    background-color: var(--light);
+    border-radius: 25px;
+  }
+
+  &__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+}
