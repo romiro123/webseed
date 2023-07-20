@@ -25,6 +25,8 @@
   &__content {
     width: 60%;
     padding: 40px;
+    display: flex;
+    flex-direction: column;
 
     @include small-tablet {
       width: 100%;
@@ -44,11 +46,11 @@
   }
 
   &__link {
-    display: inline-block;
+    margin-top: auto;
+    margin-right: auto;
 
-    @include mobile {
-      display: block;
-      text-align: center;
+    @include small-tablet {
+      margin-right: 0;
     }
   }
 

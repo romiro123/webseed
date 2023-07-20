@@ -1,0 +1,27 @@
+.graph-modal {
+  &__container {
+    max-width: 500px;
+    padding: 30px;
+    background-color: var(--light);
+    border-radius: 25px;
+
+    @include mobile {
+      padding: 20px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+}

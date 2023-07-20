@@ -70,7 +70,24 @@
       align-items: stretch;
       text-align: center;
     }
+  }
 
+  &__link {
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+
+  &__name {
+    margin-right: 5px;
+  }
+
+  &__item {
+    width: 24px;
+    height: 24px;
   }
 
   &__right {

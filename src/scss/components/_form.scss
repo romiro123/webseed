@@ -4,15 +4,41 @@
     flex-direction: column;
   }
 
-  &__label:not(:last-child) {
-    margin-bottom: 25px;
+  &__label {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    & .just-validate-error-label {
+      position: absolute;
+      color: red !important;
+      font-size: 14px;
+      top: -17px;
+      left: 14px;
+      padding: 0 10px;
+      background: #fff;
+      border-radius: 10px;
+    }
   }
 
   &__input {
-    outline: 1px solid red;
     width: 100%;
+    border: 2px solid var(--accent);
     font-size: inherit;
+    border-radius: 10px;
     padding: 14px 24px;
+    transition: background-color .2s ease-in-out;
+
+    &:hover {
+      background-color: rgba(207, 231, 64, 0.5);
+    }
+
+    &:focus {
+      background-color: var(--accent);
+      outline: none;
+    }
   }
 
   &__btn {
@@ -21,26 +47,6 @@
   }
 }
 
-.graph-modal {
-  &__container {
-    width: 500px;
-    padding: 30px;
-    background-color: var(--light);
-    border-radius: 25px;
-  }
-
-  &__close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
-
-  &__title {
-    margin-bottom: 20px;
-  }
-
-  &__text {
-    margin-bottom: 20px;
-  }
-
+::-webkit-input-placeholder {
+  color: var(--grey);
 }
