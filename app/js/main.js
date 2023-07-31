@@ -32,6 +32,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/swiper */ "./src/js/components/swiper.js");
 /* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/modal */ "./src/js/components/modal.js");
 /* harmony import */ var _components_validation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/validation */ "./src/js/components/validation.js");
+/* harmony import */ var _components_map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/map */ "./src/js/components/map.js");
+/* harmony import */ var _components_map__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_map__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -194,6 +197,45 @@ new (accordion_js__WEBPACK_IMPORTED_MODULE_0___default())('.accordion--features'
 
 /***/ }),
 
+/***/ "./src/js/components/map.js":
+/*!**********************************!*\
+  !*** ./src/js/components/map.js ***!
+  \**********************************/
+/***/ (() => {
+
+document.addEventListener("DOMContentLoaded", function () {
+  ymaps.ready(init);
+  let x = 52.38891297860454;
+  let y = 55.740032307163204;
+  let iconX = 52.4057357935459;
+  let iconY = 55.739887042465234;
+  // [55.740032307163204,52.39204579873389]
+  //[55.73998388565755,52.38891297860454]
+  console.log(x, y);
+  function init() {
+    let myMap = new ymaps.Map("map", {
+      // center: [48.872185073737896, 2.354223999999991],
+      center: [y, x],
+      zoom: 14,
+      controls: []
+    }, {
+      suppressMapOpenBlock: true
+    });
+
+    // var myPlacemark = new ymaps.Placemark([48.872185073737896, 2.354223999999991], {}, {
+    let myPlacemark = new ymaps.Placemark([iconY, iconX], {}, {
+      iconLayout: 'default#image',
+      iconImageHref: './img/icon-map.svg',
+      iconImageSize: [30, 42],
+      iconImageOffset: [-15, -42]
+    });
+    // myMap.setType('yandex#map');
+    myMap.geoObjects.add(myPlacemark);
+  }
+});
+
+/***/ }),
+
 /***/ "./src/js/components/modal.js":
 /*!************************************!*\
   !*** ./src/js/components/modal.js ***!
@@ -326,35 +368,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function () {
-  var _document, _document2, _document3, _document4;
-  const burger = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelector('[data-burger]');
-  const menu = (_document2 = document) === null || _document2 === void 0 ? void 0 : _document2.querySelector('[data-menu]');
-  const menuItems = (_document3 = document) === null || _document3 === void 0 ? void 0 : _document3.querySelectorAll('[data-menu-item]');
-  const overlay = (_document4 = document) === null || _document4 === void 0 ? void 0 : _document4.querySelector('[data-menu-overlay]');
-  burger === null || burger === void 0 ? void 0 : burger.addEventListener('click', e => {
-    burger === null || burger === void 0 ? void 0 : burger.classList.toggle('burger--active');
-    menu === null || menu === void 0 ? void 0 : menu.classList.toggle('menu--active');
-    if (menu !== null && menu !== void 0 && menu.classList.contains('menu--active')) {
-      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'true');
-      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Закрыть меню');
+  const burger = document?.querySelector('[data-burger]');
+  const menu = document?.querySelector('[data-menu]');
+  const menuItems = document?.querySelectorAll('[data-menu-item]');
+  const overlay = document?.querySelector('[data-menu-overlay]');
+  burger?.addEventListener('click', e => {
+    burger?.classList.toggle('burger--active');
+    menu?.classList.toggle('menu--active');
+    if (menu?.classList.contains('menu--active')) {
+      burger?.setAttribute('aria-expanded', 'true');
+      burger?.setAttribute('aria-label', 'Закрыть меню');
       (0,_functions_disable_scroll__WEBPACK_IMPORTED_MODULE_0__.disableScroll)();
     } else {
-      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
-      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
+      burger?.setAttribute('aria-expanded', 'false');
+      burger?.setAttribute('aria-label', 'Открыть меню');
       (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
     }
   });
-  overlay === null || overlay === void 0 ? void 0 : overlay.addEventListener('click', () => {
-    burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
-    burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
+  overlay?.addEventListener('click', () => {
+    burger?.setAttribute('aria-expanded', 'false');
+    burger?.setAttribute('aria-label', 'Открыть меню');
     burger.classList.remove('burger--active');
     menu.classList.remove('menu--active');
     (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
   });
-  menuItems === null || menuItems === void 0 ? void 0 : menuItems.forEach(el => {
+  menuItems?.forEach(el => {
     el.addEventListener('click', () => {
-      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
-      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
+      burger?.setAttribute('aria-expanded', 'false');
+      burger?.setAttribute('aria-label', 'Открыть меню');
       burger.classList.remove('burger--active');
       menu.classList.remove('menu--active');
       (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
@@ -378,8 +419,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
 
 const disableScroll = () => {
-  var _document;
-  const fixBlocks = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelectorAll('.fixed-block');
+  const fixBlocks = document?.querySelectorAll('.fixed-block');
   const pagePosition = window.scrollY;
   const paddingOffset = `${window.innerWidth - _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.offsetWidth}px`;
   _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.style.scrollBehavior = 'none';
@@ -408,8 +448,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
 
 const enableScroll = () => {
-  var _document;
-  const fixBlocks = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelectorAll('.fixed-block');
+  const fixBlocks = document?.querySelectorAll('.fixed-block');
   const body = document.body;
   const pagePosition = parseInt(_vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.dataset.position, 10);
   fixBlocks.forEach(el => {
@@ -473,9 +512,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const validateForms = (selector, rules, afterSend) => {
-  var _document;
-  const form = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelector(selector);
-  const telSelector = form === null || form === void 0 ? void 0 : form.querySelector('input[type="tel"]');
+  const form = document?.querySelector(selector);
+  const telSelector = form?.querySelector('input[type="tel"]');
   if (!form) {
     console.error('Нет такого селектора!');
     return false;
