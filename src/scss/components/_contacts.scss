@@ -7,6 +7,10 @@
     margin-bottom: 80px;
   }
 
+  @include mobile {
+    margin-bottom: 45px;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -87,6 +91,7 @@
 
   &__name {
     display: block;
+    font-weight: 600;
   }
 }
 

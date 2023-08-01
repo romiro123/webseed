@@ -362,7 +362,7 @@ html {
 }
 
 .graph-modal {
-  --transition-time: 0.3s;
+  --transition-time:0.3s;
   position: fixed;
   left: 0;
   top: 0;
@@ -462,9 +462,7 @@ html {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
-}
-
-/**
+} /**
  * Swiper 7.4.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com

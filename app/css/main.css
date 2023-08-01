@@ -1406,6 +1406,11 @@ p {
     margin-bottom: 80px;
   }
 }
+@media (max-width: 576px) {
+  .contacts {
+    margin-bottom: 45px;
+  }
+}
 .contacts__container {
   display: -ms-grid;
   display: grid;
@@ -1503,6 +1508,7 @@ p {
 }
 .address__name {
   display: block;
+  font-weight: 600;
 }
 
 #map {
