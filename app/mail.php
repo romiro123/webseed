@@ -3,15 +3,20 @@
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
+require 'telegram/TelegramSender.php';
 
-$title = "Тема письма";
+$telegram_send_result = (new TelegramSender())->send([
+    'name' => $_POST['name'],
+    'phone' => $_POST['phone']
+]);
+
 $file = $_FILES['file'];
 
 $c = true;
 // Формирование самого письма
-$title = "Заголовок письма";
+$title = "Заявка с сайта Webseed.ru";
 foreach ( $_POST as $key => $value ) {
-  if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
+  if ( $value != "" && $key != "admin_email" && $key != "form_subject" ) {
     $body .= "
     " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
       <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
@@ -32,16 +37,16 @@ try {
   $mail->SMTPAuth   = true;
 
   // Настройки вашей почты
-  $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-  $mail->Username   = ''; // Логин на почте
-  $mail->Password   = ''; // Пароль на почте
+  $mail->Host       = 'smtp.jino.ru'; // SMTP сервера вашей почты
+  $mail->Username   = 'info@webseed.ru'; // Логин на почте
+  $mail->Password   = 'Uvz4wu5mk`62'; // Пароль на почте
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom('', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
+  $mail->setFrom('info@webseed.ru', 'webseed.ru'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
-  $mail->addAddress('');
+  $mail->addAddress('nick.iv.dev@gmail.com');
 
   // Прикрипление файлов к письму
   if (!empty($file['name'][0])) {
@@ -62,8 +67,16 @@ try {
   $mail->Subject = $title;
   $mail->Body = $body;
 
-  $mail->send();
+  $email_send_result = (bool) $mail->send();
 
 } catch (Exception $e) {
-  $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
+  $msg = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
+  $email_send_result = false;
 }
+
+header('Content-Type: application/json; charset=utf-8');
+echo json_encode([
+  'status' => $email_send_result && $email_send_result,
+  'email_send_result'=> $email_send_result,
+  'telegram_send_result' => $telegram_send_result
+]);
