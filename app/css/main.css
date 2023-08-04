@@ -1183,6 +1183,10 @@ p {
   color: var(--light);
   margin-bottom: 20px;
 }
+.social__text-link {
+  color: inherit;
+  outline: none;
+}
 .social__wrapp-btns {
   display: -webkit-box;
   display: -ms-flexbox;

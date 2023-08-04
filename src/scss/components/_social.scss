@@ -60,6 +60,11 @@
     margin-bottom: 20px;
   }
 
+  &__text-link {
+    color: inherit;
+    outline: none;
+  }
+
   &__wrapp-btns {
     @include flex-v-center;
     flex-wrap: wrap;
