@@ -6,8 +6,8 @@ require 'phpmailer/Exception.php';
 require 'telegram/TelegramSender.php';
 
 $telegram_send_result = (new TelegramSender())->send([
-    'name' => $_POST['name'],
-    'phone' => $_POST['phone']
+    'name' => $_POST['имя'],
+    'phone' => $_POST['телефон']
 ]);
 
 $file = $_FILES['file'];
@@ -43,10 +43,11 @@ try {
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom('info@webseed.ru', 'webseed.ru'); // Адрес самой почты и имя отправителя
+  $mail->setFrom('info@webseed.ru', 'Webseed New Lead'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
   $mail->addAddress('nick.iv.dev@gmail.com');
+  $mail->addAddress('nikita03.1998@mail.ru');
 
   // Прикрипление файлов к письму
   if (!empty($file['name'][0])) {
