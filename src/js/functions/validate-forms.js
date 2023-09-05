@@ -51,11 +51,11 @@ export const validateForms = (selector, rules, afterSend) => {
           if (afterSend) {
             afterSend();
           }
-          console.log('Отправлено');
+          document.querySelector('.form--feedback-content').setAttribute('style', 'display:none')
+          document.querySelector('.form--success-content').setAttribute('style', 'display:block')
         }
       }
     }
-
     xhr.open('POST', 'mail.php', true);
     xhr.send(formData);
 
