@@ -34,7 +34,6 @@ const rulesModal = [
 
 
 const afterForm = () => {
-  console.log('Произошла отправка, тут можно писать любые действия');
 };
 
 validateForms('.form--modal', rulesModal, afterForm);

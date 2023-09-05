@@ -353,9 +353,7 @@ const rulesModal = [{
     errorMessage: 'Заполните телефон!'
   }]
 }];
-const afterForm = () => {
-  console.log('Произошла отправка, тут можно писать любые действия');
-};
+const afterForm = () => {};
 (0,_functions_validate_forms__WEBPACK_IMPORTED_MODULE_0__.validateForms)('.form--modal', rulesModal, afterForm);
 
 /***/ }),
