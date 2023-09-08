@@ -45,13 +45,24 @@
     margin-bottom: 15px;
   }
 
+  &__wrapp-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
   &__link {
     margin-top: auto;
-    margin-right: auto;
+    // margin-right: auto;
 
-    @include small-tablet {
-      margin-right: 0;
-    }
+    // @include small-tablet {
+    //   margin-right: 0;
+    // }
   }
 
   &__img-wrapp {

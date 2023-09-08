@@ -371,34 +371,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function () {
-  const burger = document?.querySelector('[data-burger]');
-  const menu = document?.querySelector('[data-menu]');
-  const menuItems = document?.querySelectorAll('[data-menu-item]');
-  const overlay = document?.querySelector('[data-menu-overlay]');
-  burger?.addEventListener('click', e => {
-    burger?.classList.toggle('burger--active');
-    menu?.classList.toggle('menu--active');
-    if (menu?.classList.contains('menu--active')) {
-      burger?.setAttribute('aria-expanded', 'true');
-      burger?.setAttribute('aria-label', 'Закрыть меню');
+  var _document, _document2, _document3, _document4;
+  const burger = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelector('[data-burger]');
+  const menu = (_document2 = document) === null || _document2 === void 0 ? void 0 : _document2.querySelector('[data-menu]');
+  const menuItems = (_document3 = document) === null || _document3 === void 0 ? void 0 : _document3.querySelectorAll('[data-menu-item]');
+  const overlay = (_document4 = document) === null || _document4 === void 0 ? void 0 : _document4.querySelector('[data-menu-overlay]');
+  burger === null || burger === void 0 ? void 0 : burger.addEventListener('click', e => {
+    burger === null || burger === void 0 ? void 0 : burger.classList.toggle('burger--active');
+    menu === null || menu === void 0 ? void 0 : menu.classList.toggle('menu--active');
+    if (menu !== null && menu !== void 0 && menu.classList.contains('menu--active')) {
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'true');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Закрыть меню');
       (0,_functions_disable_scroll__WEBPACK_IMPORTED_MODULE_0__.disableScroll)();
     } else {
-      burger?.setAttribute('aria-expanded', 'false');
-      burger?.setAttribute('aria-label', 'Открыть меню');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
       (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
     }
   });
-  overlay?.addEventListener('click', () => {
-    burger?.setAttribute('aria-expanded', 'false');
-    burger?.setAttribute('aria-label', 'Открыть меню');
+  overlay === null || overlay === void 0 ? void 0 : overlay.addEventListener('click', () => {
+    burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
+    burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
     burger.classList.remove('burger--active');
     menu.classList.remove('menu--active');
     (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
   });
-  menuItems?.forEach(el => {
+  menuItems === null || menuItems === void 0 ? void 0 : menuItems.forEach(el => {
     el.addEventListener('click', () => {
-      burger?.setAttribute('aria-expanded', 'false');
-      burger?.setAttribute('aria-label', 'Открыть меню');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
       burger.classList.remove('burger--active');
       menu.classList.remove('menu--active');
       (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
@@ -422,7 +423,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
 
 const disableScroll = () => {
-  const fixBlocks = document?.querySelectorAll('.fixed-block');
+  var _document;
+  const fixBlocks = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelectorAll('.fixed-block');
   const pagePosition = window.scrollY;
   const paddingOffset = `${window.innerWidth - _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.offsetWidth}px`;
   _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.style.scrollBehavior = 'none';
@@ -451,7 +453,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
 
 const enableScroll = () => {
-  const fixBlocks = document?.querySelectorAll('.fixed-block');
+  var _document;
+  const fixBlocks = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelectorAll('.fixed-block');
   const body = document.body;
   const pagePosition = parseInt(_vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.dataset.position, 10);
   fixBlocks.forEach(el => {
@@ -515,8 +518,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const validateForms = (selector, rules, afterSend) => {
-  const form = document?.querySelector(selector);
-  const telSelector = form?.querySelector('input[type="tel"]');
+  var _document;
+  const form = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelector(selector);
+  const telSelector = form === null || form === void 0 ? void 0 : form.querySelector('input[type="tel"]');
   if (!form) {
     console.error('Нет такого селектора!');
     return false;

@@ -362,7 +362,7 @@ html {
 }
 
 .graph-modal {
-  --transition-time:0.3s;
+  --transition-time: 0.3s;
   position: fixed;
   left: 0;
   top: 0;
