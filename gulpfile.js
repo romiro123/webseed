@@ -326,11 +326,16 @@ const zipFiles = (done) => {
 //     }))
 // }
 
+const copyRobots = () => {
+  return src(`${srcFolder}/robots.txt`)
+    .pipe(dest(buildFolder));
+}
+
 exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, watchFiles);
 
 exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, svgSprites)
 
-exports.build = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, htmlMinify);
+exports.build = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, htmlMinify, copyRobots);
 
 exports.cache = series(cache, rewrite);
 

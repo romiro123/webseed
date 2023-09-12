@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Host: webseed.ru
-Sitemap: http://webseed.ru/sitemap.xml
+Sitemap: https://webseed.ru/sitemap.xml
