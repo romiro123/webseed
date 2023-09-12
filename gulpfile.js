@@ -326,8 +326,8 @@ const zipFiles = (done) => {
 //     }))
 // }
 
-const copyRobots = () => {
-  return src(`${srcFolder}/robots.txt`)
+const copySeoFiles = () => {
+  return src(`${srcFolder}/{robots.txt,sitemap.xml}`)
     .pipe(dest(buildFolder));
 }
 
@@ -335,7 +335,7 @@ exports.default = series(clean, htmlInclude, scripts, styles, resources, images,
 
 exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, svgSprites)
 
-exports.build = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, htmlMinify, copyRobots);
+exports.build = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, htmlMinify, copySeoFiles);
 
 exports.cache = series(cache, rewrite);
 
