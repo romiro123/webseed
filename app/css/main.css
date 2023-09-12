@@ -592,6 +592,14 @@ p {
 .header {
   background-color: var(--dark);
 }
+.header__container {
+  padding-bottom: 25px;
+}
+@media (max-width: 768px) {
+  .header__container {
+    padding-bottom: 0;
+  }
+}
 .header__top {
   display: -webkit-box;
   display: -ms-flexbox;

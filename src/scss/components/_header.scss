@@ -1,6 +1,14 @@
 .header {
   background-color: var(--dark);
 
+  &__container {
+    padding-bottom: 25px;
+
+    @include small-tablet {
+      padding-bottom: 0;
+    }
+  }
+
   &__top {
     @include flex-all-sb;
     padding: 25px 0;
