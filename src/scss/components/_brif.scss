@@ -1,0 +1,26 @@
+.brif {
+  &__content {
+    padding-top: 50px;
+  }
+
+  &__desc {
+    margin-bottom: 30px;
+  }
+
+  &-desc {
+    &__title {
+      margin-bottom: 10px;
+    }
+
+    &__text:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__attention {
+    border-radius: 25px;
+    background-color: var(--light);
+    padding: 30px;
+    margin-bottom: 50px;
+  }
+}

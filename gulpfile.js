@@ -22,9 +22,7 @@ const htmlmin = require('gulp-htmlmin');
 const gulpif = require('gulp-if');
 const notify = require('gulp-notify');
 const image = require('gulp-imagemin');
-const {
-  readFileSync
-} = require('fs');
+const { readFileSync } = require('fs');
 const typograf = require('gulp-typograf');
 const webp = require('gulp-webp');
 const mainSass = gulpSass(sass);

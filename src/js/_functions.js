@@ -44,7 +44,7 @@ import { burger } from './functions/burger';
 // import 'simplebar';
 
 // Подключение плагина для позиционирования тултипов
-// import { createPopper, right} from '@popperjs/core';
+// import { createPopper, right } from '@popperjs/core';
 // createPopper(el, tooltip, {
 //   placement: 'right'
 // });
