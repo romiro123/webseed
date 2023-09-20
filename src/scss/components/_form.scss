@@ -41,9 +41,40 @@
     }
   }
 
+  &__title {
+    &--brif {
+      margin-bottom: 10px;
+    }
+  }
+
   &__btn {
     display: inline-block;
     margin-right: auto;
+  }
+
+  &__list {
+    &--brif:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &--checkbox {}
+  }
+
+  &__item {
+    &--brif:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+
+  &__wrapp-subtitle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &__tippy-btn {
+    margin: 0 0 0 5px;
   }
 }
 

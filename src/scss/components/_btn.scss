@@ -1,0 +1,17 @@
+.btn {
+  &--tooltip {
+    display: flex;
+
+    & svg {
+      display: inline-block;
+      fill: #cfe741;
+      transition: fill .2s ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        fill: var(--accent-dark);
+      }
+    }
+  }
+}
