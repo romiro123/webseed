@@ -72,6 +72,7 @@
   &__nav {
     @include flex-all-sb;
     width: 80px;
+    flex-shrink: 0;
   }
 
   &__nav-btn {

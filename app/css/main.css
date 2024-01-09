@@ -32,6 +32,7 @@
   --accent-dark: #bad03b;
   --accent-light: #dffd2e;
   --main: #f4f4f5;
+  --smoke-light:#d3d4db59;
 }
 @media (max-width: 768px) {
   :root {
@@ -252,6 +253,9 @@ p {
 .title--xs {
   font-size: 16px;
   line-height: 24px;
+}
+.title--light {
+  color: var(--light);
 }
 
 .link {
@@ -1412,6 +1416,8 @@ p {
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 80px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 .reviews__nav-btn {
   display: -webkit-inline-box;
@@ -1449,6 +1455,186 @@ p {
 .reviews__nav-btn:focus svg {
   stroke: var(--dark);
   background-color: var(--accent);
+}
+
+.promo-portfolio {
+  background-color: var(--smoke-light);
+}
+.promo-portfolio--main {
+  margin-bottom: 120px;
+  background-color: var(--dark);
+}
+@media (max-width: 1024px) {
+  .promo-portfolio--main {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 576px) {
+  .promo-portfolio--main {
+    margin-bottom: 45px;
+  }
+}
+.promo-portfolio__container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+@media (max-width: 1024px) {
+  .promo-portfolio__container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+@media (max-width: 576px) {
+  .promo-portfolio__container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+.promo-portfolio__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+@media (max-width: 1024px) {
+  .promo-portfolio__top {
+    margin-bottom: 20px;
+  }
+}
+.promo-portfolio__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 80px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+.promo-portfolio__nav-btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: static;
+}
+.promo-portfolio__nav-btn svg {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
+  border: 2px solid var(--accent-light);
+  border-radius: 100%;
+  fill: none;
+  background-color: transparent;
+  stroke: var(--accent-light);
+  stroke-linecap: round;
+  stroke-width: 2px;
+  -webkit-transition: stroke 0.2s ease-in-out, border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: stroke 0.2s ease-in-out, border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+.promo-portfolio__nav-btn:hover svg {
+  border: 2px solid var(--accent);
+  stroke: var(--dark);
+  background-color: var(--accent);
+}
+.promo-portfolio__nav-btn:focus {
+  outline: none;
+}
+.promo-portfolio__nav-btn:focus svg {
+  border: 2px solid var(--accent);
+  stroke: var(--dark);
+  background-color: var(--accent);
+}
+.promo-portfolio__nav-btn--prev {
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.promo-portfolio__slider {
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+@media (max-width: 768px) {
+  .promo-portfolio__slider {
+    margin-bottom: 15px;
+  }
+}
+.promo-portfolio__slide {
+  background-color: var(--main);
+  border-radius: 25px;
+}
+
+.portfolio-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.portfolio-card__img {
+  height: 200px;
+  border-radius: 25px 25px 0 0;
+}
+.portfolio-card__wrapp {
+  padding: 20px 25px 25px 25px;
+}
+.portfolio-card__title {
+  margin-bottom: 15px;
+}
+
+.dynamic-pagination {
+  position: sticky;
+}
+.dynamic-pagination .swiper-pagination-bullet {
+  height: 10px;
+  width: 10px;
+  background: var(--accent-light);
+  opacity: 0.2;
+}
+.dynamic-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent);
+  opacity: 1;
+}
+.dynamic-pagination--dark .swiper-pagination-bullet {
+  background: var(--grey-dark);
+}
+.dynamic-pagination--dark .swiper-pagination-bullet-active {
+  background-color: var(--accent);
+}
+
+.portfolio {
+  padding-top: 50px;
+  margin-bottom: 120px;
+}
+@media (max-width: 1024px) {
+  .portfolio {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 576px) {
+  .portfolio {
+    margin-bottom: 45px;
+  }
+}
+.portfolio__title {
+  margin-bottom: 36px;
+}
+@media (max-width: 1024px) {
+  .portfolio__title {
+    margin-bottom: 20px;
+  }
 }
 
 .contacts {

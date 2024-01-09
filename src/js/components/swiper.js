@@ -54,7 +54,35 @@ const swiperReviews = new Swiper('.swiper--reviews', {
       slidesPerView: 2,
       spaceBetween: 30,
     },
-
   }
+});
 
+const swiperPromoPortfolio = new Swiper('.swiper--portfolio', {
+  navigation: {
+    nextEl: ".promo-portfolio__nav-btn--next",
+    prevEl: ".promo-portfolio__nav-btn--prev",
+  },
+  spaceBetween: 30,
+  loop: true,
+
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 30,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+  },
+
+  pagination: {
+    el: ".dynamic-pagination",
+    dynamicBullets: true,
+  },
 });

@@ -3282,6 +3282,33 @@ const swiperReviews = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swipe
     }
   }
 });
+const swiperPromoPortfolio = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper--portfolio', {
+  navigation: {
+    nextEl: ".promo-portfolio__nav-btn--next",
+    prevEl: ".promo-portfolio__nav-btn--prev"
+  },
+  spaceBetween: 30,
+  loop: true,
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 30
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    }
+  },
+  pagination: {
+    el: ".dynamic-pagination",
+    dynamicBullets: true
+  }
+});
 
 /***/ }),
 
