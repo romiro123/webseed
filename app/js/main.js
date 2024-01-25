@@ -2981,6 +2981,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_map__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_map__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _components_choices__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/choices */ "./src/js/components/choices.js");
 /* harmony import */ var _components_tippy__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/tippy */ "./src/js/components/tippy.js");
+/* harmony import */ var _components_header_scroll__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/header-scroll */ "./src/js/components/header-scroll.js");
+/* harmony import */ var _components_header_scroll__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_header_scroll__WEBPACK_IMPORTED_MODULE_7__);
 
 
 
@@ -2988,8 +2990,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import './components/poppers';
-// import './components/smooth-scroll';
+
 
 /***/ }),
 
@@ -3001,14 +3002,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/mobile-check */ "./src/js/functions/mobile-check.js");
-/* harmony import */ var _functions_burger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/burger */ "./src/js/functions/burger.js");
+/* harmony import */ var _functions_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/burger */ "./src/js/functions/burger.js");
 // Данный файл - лишь собрание подключений готовых компонентов.
 // Рекомендуется создавать отдельный файл в папке components и подключать все там
 
 // Определение операционной системы на мобильных
-
-console.log((0,_functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__.mobileCheck)());
+// import { mobileCheck } from "./functions/mobile-check";
+// console.log(mobileCheck())
 
 // Определение ширины экрана
 // import { isMobile, isTablet, isDesktop } from './functions/check-viewport';
@@ -3153,10 +3153,37 @@ __webpack_require__.r(__webpack_exports__);
 // import Accordion from 'accordion-js';
 
 const defSelect = () => {
-  let arrSelect = document?.querySelectorAll('.default');
+  var _document;
+  let arrSelect = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelectorAll('.default');
   arrSelect.forEach(elem => new (choices_js__WEBPACK_IMPORTED_MODULE_0___default())(elem));
 };
 defSelect();
+
+/***/ }),
+
+/***/ "./src/js/components/header-scroll.js":
+/*!********************************************!*\
+  !*** ./src/js/components/header-scroll.js ***!
+  \********************************************/
+/***/ (() => {
+
+if (window.innerWidth <= 768) {
+  let lastScroll = 0;
+  const defaultOffset = 200;
+  const header = document.querySelector('.header');
+  const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
+  const containHide = () => header.classList.contains('header__hide');
+  window.addEventListener('scroll', () => {
+    if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
+      //scroll down
+      header.classList.add('header__hide');
+    } else if (scrollPosition() < lastScroll && containHide()) {
+      //scroll up
+      header.classList.remove('header__hide');
+    }
+    lastScroll = scrollPosition();
+  });
+}
 
 /***/ }),
 
@@ -3193,7 +3220,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     let myPlacemark = new ymaps.Placemark([iconY, iconX], {}, {
       iconLayout: 'default#image',
-      iconImageHref: './img/icon-map.svg',
+      // iconImageHref: './img/icon-map.svg',
+      iconImageHref: '/wp-content/themes/webseed/assets/img/icon-map.svg',
       iconImageSize: [30, 42],
       iconImageOffset: [-15, -42]
     });
@@ -3261,8 +3289,8 @@ const swiperStack = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-
 });
 const swiperReviews = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper--reviews', {
   navigation: {
-    nextEl: ".reviews__nav-btn--next",
-    prevEl: ".reviews__nav-btn--prev"
+    nextEl: ".reviews__next",
+    prevEl: ".reviews__prev"
   },
   slidesPerView: 1,
   spaceBetween: 30,
@@ -3282,10 +3310,10 @@ const swiperReviews = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swipe
     }
   }
 });
-const swiperPromoPortfolio = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper--portfolio', {
+const swiperPromoPortfolio = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper--promo-portfolio', {
   navigation: {
-    nextEl: ".promo-portfolio__nav-btn--next",
-    prevEl: ".promo-portfolio__nav-btn--prev"
+    nextEl: ".promo-portfolio__next",
+    prevEl: ".promo-portfolio__prev"
   },
   spaceBetween: 30,
   loop: true,
@@ -3305,7 +3333,34 @@ const swiperPromoPortfolio = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](
     }
   },
   pagination: {
-    el: ".dynamic-pagination",
+    el: ".promo-portfolio__pagination",
+    dynamicBullets: true
+  }
+});
+const swiperPromoBlog = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper--promo-blog', {
+  navigation: {
+    nextEl: ".promo-blog__next",
+    prevEl: ".promo-blog__prev"
+  },
+  spaceBetween: 30,
+  loop: true,
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 30
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    }
+  },
+  pagination: {
+    el: ".promo-blog__pagination",
     dynamicBullets: true
   }
 });
@@ -3388,8 +3443,9 @@ const AccordionLists = function () {
     activeClass: 'is-active'
   };
   for (const key in names) {
+    var _document;
     // const accordionName = document?.querySelector(name);
-    if (!document?.querySelector(names[key])) {
+    if (!((_document = document) !== null && _document !== void 0 && _document.querySelector(names[key]))) {
       continue;
     }
     new (accordion_js__WEBPACK_IMPORTED_MODULE_0___default())(names[key], params);
@@ -3411,34 +3467,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function () {
-  const burger = document?.querySelector('[data-burger]');
-  const menu = document?.querySelector('[data-menu]');
-  const menuItems = document?.querySelectorAll('[data-menu-item]');
-  const overlay = document?.querySelector('[data-menu-overlay]');
-  burger?.addEventListener('click', e => {
-    burger?.classList.toggle('burger--active');
-    menu?.classList.toggle('menu--active');
-    if (menu?.classList.contains('menu--active')) {
-      burger?.setAttribute('aria-expanded', 'true');
-      burger?.setAttribute('aria-label', 'Закрыть меню');
+  var _document, _document2, _document3, _document4;
+  const burger = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelector('[data-burger]');
+  const menu = (_document2 = document) === null || _document2 === void 0 ? void 0 : _document2.querySelector('[data-menu]');
+  const menuItems = (_document3 = document) === null || _document3 === void 0 ? void 0 : _document3.querySelectorAll('[data-menu-item]');
+  const overlay = (_document4 = document) === null || _document4 === void 0 ? void 0 : _document4.querySelector('[data-menu-overlay]');
+  burger === null || burger === void 0 ? void 0 : burger.addEventListener('click', e => {
+    burger === null || burger === void 0 ? void 0 : burger.classList.toggle('burger--active');
+    menu === null || menu === void 0 ? void 0 : menu.classList.toggle('menu--active');
+    if (menu !== null && menu !== void 0 && menu.classList.contains('menu--active')) {
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'true');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Закрыть меню');
       (0,_functions_disable_scroll__WEBPACK_IMPORTED_MODULE_0__.disableScroll)();
     } else {
-      burger?.setAttribute('aria-expanded', 'false');
-      burger?.setAttribute('aria-label', 'Открыть меню');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
       (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
     }
   });
-  overlay?.addEventListener('click', () => {
-    burger?.setAttribute('aria-expanded', 'false');
-    burger?.setAttribute('aria-label', 'Открыть меню');
+  overlay === null || overlay === void 0 ? void 0 : overlay.addEventListener('click', () => {
+    burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
+    burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
     burger.classList.remove('burger--active');
     menu.classList.remove('menu--active');
     (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
   });
-  menuItems?.forEach(el => {
+  menuItems === null || menuItems === void 0 ? void 0 : menuItems.forEach(el => {
     el.addEventListener('click', () => {
-      burger?.setAttribute('aria-expanded', 'false');
-      burger?.setAttribute('aria-label', 'Открыть меню');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-expanded', 'false');
+      burger === null || burger === void 0 ? void 0 : burger.setAttribute('aria-label', 'Открыть меню');
       burger.classList.remove('burger--active');
       menu.classList.remove('menu--active');
       (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
@@ -3462,7 +3519,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
 
 const disableScroll = () => {
-  const fixBlocks = document?.querySelectorAll('.fixed-block');
+  var _document;
+  const fixBlocks = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelectorAll('.fixed-block');
   const pagePosition = window.scrollY;
   const paddingOffset = `${window.innerWidth - _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.offsetWidth}px`;
   _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.style.scrollBehavior = 'none';
@@ -3491,7 +3549,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
 
 const enableScroll = () => {
-  const fixBlocks = document?.querySelectorAll('.fixed-block');
+  var _document;
+  const fixBlocks = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelectorAll('.fixed-block');
   const body = document.body;
   const pagePosition = parseInt(_vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.dataset.position, 10);
   fixBlocks.forEach(el => {
@@ -3506,34 +3565,7 @@ const enableScroll = () => {
   });
   _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.removeAttribute('data-position');
   _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.style.scrollBehavior = 'smooth';
-};
-
-/***/ }),
-
-/***/ "./src/js/functions/mobile-check.js":
-/*!******************************************!*\
-  !*** ./src/js/functions/mobile-check.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   mobileCheck: () => (/* binding */ mobileCheck)
-/* harmony export */ });
-/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
-
-const mobileCheck = () => {
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  if (/android/i.test(userAgent)) {
-    _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.classList.add('page--android');
-    return "Android";
-  }
-  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.classList.add('page--ios');
-    return "iOS";
-  }
-  return "unknown";
+  _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.style.scrollPaddingTop = '40px';
 };
 
 /***/ }),
@@ -3555,8 +3587,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const validateForms = (selector, rules, afterSend) => {
-  const form = document?.querySelector(selector);
-  const telSelector = form?.querySelector('input[type="tel"]');
+  var _document;
+  const form = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelector(selector);
+  const telSelector = form === null || form === void 0 ? void 0 : form.querySelector('input[type="tel"]');
   if (!form) {
     console.error('Нет такого селектора!');
     return false;
@@ -3599,7 +3632,8 @@ const validateForms = (selector, rules, afterSend) => {
         }
       }
     };
-    xhr.open('POST', 'mail.php', true);
+    // xhr.open('POST', 'mail.php', true);
+    xhr.open('POST', 'wp-content/themes/webseed/mail.php', true);
     xhr.send(formData);
     ev.target.reset();
   });

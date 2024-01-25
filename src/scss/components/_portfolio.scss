@@ -1,0 +1,20 @@
+.portfolio {
+  padding-top: 50px;
+  margin-bottom: 120px;
+
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
+  @include mobile {
+    margin-bottom: 45px;
+  }
+
+  &__title {
+    margin-bottom: 36px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+}

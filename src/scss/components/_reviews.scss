@@ -1,36 +1,9 @@
 .reviews {
-  margin-bottom: 120px;
-
-  @include tablet {
-    margin-bottom: 80px;
-  }
-
-  @include mobile {
-    margin-bottom: 45px;
-  }
-
-  &__top {
-    @include flex-all-sb;
-    margin-bottom: 36px;
-
-    @include tablet {
-      margin-bottom: 20px;
-    }
-  }
-
-  &__title {}
-
-  &__slide {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    cursor: grabbing;
-    background-color: var(--light);
-    border-radius: 25px;
-  }
-
   &-card {
     padding: 25px;
+    background-color: var(--light);
+    border-radius: 25px;
+    height: 100%;
 
     &__header {
       @include flex-all-sb;
@@ -67,55 +40,9 @@
     &__text {}
   }
 
-
-
   &__nav {
     @include flex-all-sb;
     width: 80px;
     flex-shrink: 0;
   }
-
-  &__nav-btn {
-    display: inline-flex;
-    position: static;
-
-    &--prev {
-      transform: scale(-1, 1)
-    }
-
-    & svg {
-      flex-shrink: 0;
-      width: 35px;
-      height: 35px;
-      border: 2px solid var(--dark);
-      border-radius: 100%;
-      fill: none;
-      background-color: transparent;
-      stroke: var(--dark);
-      stroke-linecap: round;
-      stroke-width: 2px;
-      transition: stroke .2s ease-in-out,
-        border .2s ease-in-out,
-        background-color .2s ease-in-out;
-    }
-
-    &:hover {
-      svg {
-        background-color: var(--dark);
-        stroke: var(--light);
-      }
-    }
-
-    &:focus {
-      outline: none;
-
-      svg {
-        stroke: var(--dark);
-        background-color: var(--accent);
-      }
-    }
-
-  }
-
-
 }

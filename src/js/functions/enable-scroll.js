@@ -15,4 +15,5 @@ export const enableScroll = () => {
   });
   vars.bodyEl.removeAttribute('data-position');
   vars.htmlEl.style.scrollBehavior = 'smooth';
+  vars.htmlEl.style.scrollPaddingTop = '40px';
 }

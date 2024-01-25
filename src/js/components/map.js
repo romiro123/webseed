@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let myPlacemark = new ymaps.Placemark([iconY, iconX], {}, {
       iconLayout: 'default#image',
-      iconImageHref: './img/icon-map.svg',
+      // iconImageHref: './img/icon-map.svg',
+      iconImageHref: '/wp-content/themes/webseed/assets/img/icon-map.svg',
       iconImageSize: [30, 42],
       iconImageOffset: [-15, -42]
     });

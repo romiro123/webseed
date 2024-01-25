@@ -8,10 +8,12 @@
   }
 
   @include small-tablet {
+    padding-top: 90px;
     border-radius: 0 0 25px 25px;
   }
 
   @include mobile {
+    padding-top: 70px;
     margin-bottom: 45px;
   }
 

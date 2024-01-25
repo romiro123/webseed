@@ -1,6 +1,19 @@
 .header {
   background-color: var(--dark);
 
+  @include small-tablet {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    // background-color: transparent;
+    transition: all .2s linear;
+  }
+
+  &__hide {
+    transform: translateY(-100px);
+  }
+
   &__container {
     padding-bottom: 25px;
 
@@ -31,6 +44,7 @@
 
     @include small-tablet {
       border: none;
+      border-radius: 0;
       padding: 15px var(--container-offset);
     }
   }
@@ -109,6 +123,11 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  }
+
+  @include mobile {
+    top: 70px;
+    height: calc(100vh - 70px);
   }
 
   &--active {

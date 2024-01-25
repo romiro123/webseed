@@ -23,7 +23,7 @@ export const validateForms = (selector, rules, afterSend) => {
       if (item.tel) {
         item.rules.push({
           rule: 'function',
-          validator: function() {
+          validator: function () {
             const phone = telSelector.inputmask.unmaskedvalue();
             return phone.length === 10;
           },
@@ -56,7 +56,8 @@ export const validateForms = (selector, rules, afterSend) => {
         }
       }
     }
-    xhr.open('POST', 'mail.php', true);
+    // xhr.open('POST', 'mail.php', true);
+    xhr.open('POST', 'wp-content/themes/webseed/mail.php', true);
     xhr.send(formData);
 
     ev.target.reset();

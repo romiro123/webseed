@@ -1,0 +1,111 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--light);
+  border-radius: 25px;
+
+  &__img {
+    height: 200px;
+    border-radius: 25px 25px 0 0;
+  }
+
+  &__wrapp {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px 25px 25px 25px;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    text-align: center;
+    margin-top: auto;
+  }
+}
+
+.card-slider {
+  &--main {
+    margin-bottom: 120px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
+
+    @include mobile {
+      margin-bottom: 45px;
+    }
+  }
+
+  &--dark {
+    background-color: var(--dark);
+  }
+
+  &--smoke {
+    background-color: var(--smoke-light);
+  }
+
+  &__container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include tablet {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    @include mobile {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  &__slider {
+    cursor: pointer;
+    margin-bottom: 25px;
+
+    @include small-tablet {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+
+    &--reviews {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      cursor: grabbing;
+    }
+  }
+
+}
