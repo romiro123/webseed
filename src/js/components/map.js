@@ -35,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
       iconImageSize: [30, 42],
       iconImageOffset: [-15, -42]
     });
-    myMap.behaviors.disable('scrollZoom');
+    myMap.behaviors.disable('scrollZoom').disable('drag').enable('multiTouch');
     myMap.geoObjects.add(myPlacemark);
+
   }
 });

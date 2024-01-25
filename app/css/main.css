@@ -1,5 +1,7 @@
 @charset "UTF-8";
-/* stylelint-disable */ /* stylelint-disable */ /* stylelint-disable */
+/* stylelint-disable */
+/* stylelint-disable */
+/* stylelint-disable */
 .custom-checkbox__field:checked + .custom-checkbox__content::after {
   opacity: 1;
 }
@@ -14,7 +16,9 @@
   pointer-events: none;
 }
 
-/* stylelint-disable */ /* stylelint-disable */ /* stylelint-disable value-keyword-case */
+/* stylelint-disable */
+/* stylelint-disable */
+/* stylelint-disable value-keyword-case */
 :root {
   --font-title: "Montserrat", sans-serif;
   --font-family: "Inter", sans-serif;
